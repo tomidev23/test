@@ -18,7 +18,7 @@ const PostList = () => {
 
         const response = await 
         fetch(
-          `https://suitmedia-backend.suitdev.com/api/ideas?page[number]=1&page[size]=10&append[]=small_image&append[]=medium_image&sort=-published_at}`,
+          `/api/ideas?page[number]=${currentPage}&page[size]=${perPage}&append[]=small_image&append[]=medium_image&sort=${sort === 'newest' ? '-published_at' : 'published_at'}`,
           {
             headers: {
               'Accept': 'application/json',
